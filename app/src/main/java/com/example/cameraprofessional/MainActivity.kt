@@ -2,6 +2,7 @@ package com.example.cameraprofessional
 
 import android.Manifest
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -321,7 +322,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @androidx.annotation.SuppressLint("MissingPermission")
+    @SuppressLint("MissingPermission")
     private fun toggleRecording() {
         val videoCap = videoCapture ?: return
 
