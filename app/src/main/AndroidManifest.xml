@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.CameraProfessional"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true">
+
+        <!-- MAIN: ultra-fast capture screen only. No heavy processing lives here. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ENHANCER: separate screen, opened manually after capture. Slow/heavy work only here. -->
+        <activity
+            android:name=".EnhancerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CameraProfessional" />
+
+        <!-- SPECS: full device/lens capability report. -->
+        <activity
+            android:name=".CapabilitiesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CameraProfessional" />
+
+        <!-- OPTIMIZER: scan summary + one-tap pipeline configuration for this device. -->
+        <activity
+            android:name=".OptimizeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CameraProfessional" />
+
+        <!-- PRO: manual ISO/shutter/exposure/focus/WB + look adjustments. -->
+        <activity
+            android:name=".ProCameraActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CameraProfessional" />
+
+        <!-- PORTRAIT: live background blur using on-device segmentation. -->
+        <activity
+            android:name=".PortraitActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CameraProfessional" />
+
+        <!-- QR / BARCODE SCANNER -->
+        <activity
+            android:name=".QrScannerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CameraProfessional" />
+
+        <!-- DOCUMENT SCANNER: capture -> crop -> B/W or color -> multi-page PDF -->
+        <activity
+            android:name=".DocumentScannerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CameraProfessional" />
+
+        <!-- SETTINGS: houses Diagnostics, Capabilities, Optimizer, cache reset. -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CameraProfessional" />
+
+        <!-- DIAGNOSTICS: performance metrics (frame time, capture latency, thread health). -->
+        <activity
+            android:name=".DiagnosticsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CameraProfessional" />
+
+    </application>
+
+</manifest>

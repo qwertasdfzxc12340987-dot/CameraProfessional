@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/previewImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <com.example.cameraprofessional.CornerOverlayView
+            android:id="@+id/cornerOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/pageCountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:padding="8dp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button android:id="@+id/captureButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="📸" android:textSize="11sp" />
+        <Button android:id="@+id/resetPointsButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="↺ Points" android:textSize="11sp" />
+        <Button android:id="@+id/applyCropButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="✂️ Crop" android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button android:id="@+id/bwToggleButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Mode: B/W" android:textSize="11sp" />
+        <Button android:id="@+id/addPageButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="➕ Add Page" android:textSize="11sp" />
+        <Button android:id="@+id/exportPdfButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="📄 Export PDF" android:textSize="11sp" />
+    </LinearLayout>
+
+</LinearLayout>
