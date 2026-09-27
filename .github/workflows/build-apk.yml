@@ -1,9 +1,5 @@
 name: Build APK
 
-# Builds a real, installable debug APK on GitHub's own servers.
-# Push this project to a GitHub repo, then check the "Actions" tab —
-# the finished .apk shows up there as a downloadable artifact in a few minutes.
-
 on:
   push:
     branches: [ main, master ]
@@ -21,9 +17,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
